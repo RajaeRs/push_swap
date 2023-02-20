@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   variable.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 19:23:03 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
+/*   Created: 2023/02/20 16:51:03 by rrasezin          #+#    #+#             */
+/*   Updated: 2023/02/20 16:52:52 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#ifndef VARIABLES_H
+# define VARIABLES_H
 
-void	*ft_calloc(size_t count, size_t size)
+typedef	struct s_stack
 {
-	void	*retval;
-	size_t	t;
+	int	size;
+	int	top;
+	int	*data;
+}			t_stack;
 
-	t = count * size;
-	retval = malloc(t);
-	if (!retval)
-		return (NULL);
-	ft_bzero(retval, t);
-	return (retval);
-}
+typedef	struct s_cpy_stack
+{
+	int		size;
+	int		start;
+	int		end;
+	int		*index;
+	t_stack	data;
+}			t_cpy_stack;
+
+#endif

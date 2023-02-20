@@ -6,11 +6,11 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:00:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/15 22:37:15 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {

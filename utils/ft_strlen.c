@@ -6,11 +6,11 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:43:02 by rrasezin          #+#    #+#             */
-/*   Updated: 2022/10/08 13:20:34 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "utils.h" 
 
 size_t	ft_strlen(const char *src)
 {

@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:19:04 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/19 16:26:09 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:08:02 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	get_max_to_top(t_stack *stack)
 	return ;
 }
 
-t_stack	get_copy(t_stack *stack)
+t_stack	get_copy(t_stack *stack, int *index)
 {
 	int	i;
 	t_stack	copy;
@@ -80,6 +80,7 @@ t_stack	get_copy(t_stack *stack)
 	while (i < stack->size)
 	{
 		copy.data[i] = stack->data[i];
+		index[i] = i;
 		i++;
 	}
 	return (copy);

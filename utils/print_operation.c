@@ -6,11 +6,11 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:01:58 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/17 17:06:56 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 void    print_operation(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:24:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/19 23:17:52 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:41:59 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int	main(int ac, char **av)
 	}
 	// test(&stack_a);
 	sort_data(&stack_a);
-	// rev_rotate(&stack_a, "rra");
-	// swap(&stack_a, "sa");
 	// test(&stack_a);
 }
 

@@ -6,11 +6,11 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:30:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/16 13:30:28 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 static	int	word_count(const char *s, char c)
 {
