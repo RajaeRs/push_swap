@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:00:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/22 05:49:02 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j] != '\0')
 		new[i++] = s2[j++];
 	new[i] = '\0';
-	free (s1);
+	// free (s1);
 	return (new);
 }

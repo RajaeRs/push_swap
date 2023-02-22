@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variable.h                                         :+:      :+:    :+:   */
+/*   variables.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:51:03 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 16:52:52 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:33:00 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ typedef	struct s_cpy_stack
 	int		size;
 	int		start;
 	int		end;
-	int		*index;
 	t_stack	data;
+	int		ck_size;
+	int		*chunks;
 }			t_cpy_stack;
 
 #endif

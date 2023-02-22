@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:34:24 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:52:01 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	    mini_atoi(char *data, int *error);
 void    print_operation(char *str);
 void	get_min_to_top(t_stack *stack);
 void	get_max_to_top(t_stack *stack);
-t_stack	get_copy(t_stack *stack, int *index);
-void	sort_copy(t_stack *stack, int *index);
+t_stack	get_copy(t_stack *stack);
+void	sort_copy(t_stack *stack);
+void	get_chunks(t_cpy_stack *copy, int box);
 
 #endif

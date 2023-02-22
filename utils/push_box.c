@@ -6,26 +6,27 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:00:16 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 23:36:24 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/22 07:41:30 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	to_top_a(t_stack *stack, int position)
+void	to_top_a(t_stack *stack_a, t_stack *stack_b, int position, int middle_b)
 {
 	int	middle;
-
-	middle = stack->size / 2;
+	(void)stack_b;
+	(void)middle_b;
+	middle = stack_a->size / 2;
 	if (position >= middle)
 	{
-		while (++position < stack->size)
-			rotate(stack, "ra");
+		while (++position < stack_a->size)
+			rotate(stack_a, "ra");
 	}
 	else
 	{
 		while (position-- >= 0)
-			rev_rotate(stack, "rra");	
+			rev_rotate(stack_a, "rra");
 	}
 	return ;
 }
@@ -48,50 +49,56 @@ void	to_top_b(t_stack *stack, int position)
 	return ;
 }
 
-// void	best_pos(t_stack *stack)
-// {
-// 	if (stack->top < 1)
-// 		return ;
-// 	if (stack->data[stack->top] < stack->data[stack->top - 1])
-// 		rotate(stack, "rb");
-// 	return ;
-// }
+void	check_push(t_stack *stack, int middle)
+{
+	if (stack->data[stack->top] < middle)
+		rotate(stack, "rb");
+	else if (stack->data[stack->top] < stack->data[stack->top - 1])
+		swap(stack, "sb");
+}
 
 void	push_box(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy, int nb_box)
 {
 	int	i;
+	int j;
 	int max;
+	int middle;
 	int min;
-	int	size_box;
-	int same;
-
+	int s_max;
+	int s_middle;
+	
+	j = nb_box * 2;
 	i = stack_a->top;
-	same = 0;
-	copy->size = stack_a->size;
-	size_box = (copy->size / nb_box);
-	max = copy->data.data[size_box * (nb_box - 1) + 1];
-	min = copy->data.data[copy->size - 1];
-	while (nb_box > 0)
+	while (j >= 0)
 	{
+		min = copy->chunks[j];
+		middle = copy->chunks[j-1];
+		max = copy->chunks[j - 2];
+		j > 0 && (s_middle = copy->chunks[j-3]);
+		j > 0 && (s_max = copy->chunks[j - 4]);
 		while (i >= 0)
 		{
 			if (stack_a->data[i] < max && stack_a->data[i] >= min)
 			{
-				to_top_a(stack_a, i);
+				to_top_a(stack_a, stack_b, i, middle);
 				push(stack_a, stack_b, "pb");
-				// best_pos(stack_b);
+				check_push(stack_b, middle);
+				i = stack_a->top;
+			}
+			else if (j > 0 && stack_a->data[i] < s_max && stack_a->data[i] >= max)
+			{
+				to_top_a(stack_a, stack_b, i, s_middle);
+				push(stack_a, stack_b, "pb");
+				check_push(stack_b, s_middle);
 				i = stack_a->top;
 			}
 			else
 				i--;
 		}
 		i = stack_a->top;
-		nb_box--;
-		min = max;
-		max = copy->data.data[size_box * (nb_box - 1) + 1];
-		if (nb_box == 1)
-			max = copy->data.data[0];
+		j -= 2;
 	}
+	
 }
 
 void	reset_box(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy)
@@ -112,12 +119,13 @@ void	reset_box(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy)
 			{
 				to_top_b(stack_b, i);
 				push(stack_b, stack_a, "pa");
-				i = stack_b->top;
+				// i = stack_b->top;
 				copy->data.size--;
 			}
-			else
+			// else
 				i--;
 		}
 		max = copy->data.data[j++];
 	}
 }
+

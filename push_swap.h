@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:06:45 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 20:35:55 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/21 01:50:05 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	sort_ls_hundred(t_stack *stack_a, t_stack *stack_b);
 void	sort_mr_hundred(t_stack *stack_a, t_stack *stack_b);
 void	push_box(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy, int nb_box);
 void	reset_box(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy);
+void	push_rang(t_stack *stack_a, t_stack *stack_b, t_cpy_stack *copy);
 
 #endif
