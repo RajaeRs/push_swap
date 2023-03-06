@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:30:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/20 16:56:51 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/03/05 05:58:10 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,5 @@ char	**ft_split(char *s, char c, int *size)
 		if (i_char < (word_count(s, c)))
 			new_s[i_char++] = ft_substr(s, start, (i_word - start));
 	}
-	free (s);
 	return (new_s);
 }

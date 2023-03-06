@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 22:50:44 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/22 03:02:34 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/03/05 06:02:39 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,26 @@
 
 void	sort_ls_hundred(t_stack *stack_a, t_stack *stack_b)
 {
-    t_cpy_stack copy;
-	copy.data = get_copy(stack_a); 
+	t_cpy_stack	copy;
+	int			chunks;
+
+	chunks = 6;
+	copy.data = malloc(sizeof(int) * stack_a->size);
+	if (!copy.data)
+		return ;
+	get_copy(stack_a, copy.data);
 	copy.size = stack_a->size;
-    sort_copy(&copy.data);
-	get_chunks(&copy, 6);
-    push_box(stack_a, stack_b, &copy, 6);
+	sort_copy(&copy);
+	copy.chunks = malloc(sizeof(int) * (chunks * 2) + 1);
+	if (!copy.chunks)
+	{
+		free (copy.data);
+		return ;
+	}
+	get_chunks(&copy, chunks, copy.chunks);
+	push_box(stack_a, stack_b, &copy, chunks);
 	reset_box(stack_a, stack_b, &copy);
-    return ;
+	free(copy.chunks);
+	free(copy.data);
+	return ;
 }

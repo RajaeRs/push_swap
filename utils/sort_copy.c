@@ -6,13 +6,13 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 00:46:16 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/22 01:02:16 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/03/05 06:16:19 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void	sort_copy(t_stack *stack)
+void	sort_copy(t_cpy_stack *stack)
 {
 	int	i;
 	int	loop;
@@ -24,7 +24,7 @@ void	sort_copy(t_stack *stack)
 	loop = max;
 	while (loop--)
 	{
-		i = 0;	
+		i = 0;
 		while (i < max - 1)
 		{
 			if (stack->data[i] < stack->data[i + 1])
@@ -37,4 +37,5 @@ void	sort_copy(t_stack *stack)
 		}
 		max--;
 	}
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 23:34:49 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/18 18:09:23 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:29:34 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_sorted(t_stack *data)
 {
 	int	tmp;
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 1;
@@ -39,7 +39,7 @@ int	is_rev_sorted(t_stack *data)
 {
 	int	tmp;
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 1;

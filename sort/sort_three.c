@@ -6,7 +6,7 @@
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 22:41:47 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/02/19 23:06:59 by rrasezin         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:45:29 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort_three(t_stack *stack)
 	else if (data[2] < data[0] && data[2] < data[1] && data[0] < data[1])
 	{
 		rev_rotate(stack, "rra");
-		swap(stack, "sa");	
+		swap(stack, "sa");
 	}
 	else
 		rotate(stack, "ra");

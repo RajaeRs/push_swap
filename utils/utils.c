@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrasezin <rrasezin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:24:17 by rrasezin          #+#    #+#             */
-/*   Updated: 2023/03/06 13:27:51 by rrasezin         ###   ########.fr       */
+/*   Created: 2023/03/05 06:12:51 by rrasezin          #+#    #+#             */
+/*   Updated: 2023/03/05 06:13:55 by rrasezin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
-int	main(int ac, char **av)
+void	free_list(char **list)
 {
-	t_stack	stack_a;
-	int		error;
+	int	i;
 
-	stack_a.top = -1;
-	error = get_data(ac, av, &stack_a);
-	if (error != 0)
-	{
-		if (error == 2)
-			write(2, "Error\n", 6);
-		exit (1);
-	}
-	if (is_sorted(&stack_a) == 0)
-	{
-		free (stack_a.data);
-		exit (0);
-	}
-	else
-	{
-		sort_data(&stack_a);
-		free(stack_a.data);
-	}
+	i = 0;
+	while (list[i])
+		free(list[i++]);
+	free(list);
+	return ;
+}
+
+int	speac(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i] == ' ')
+		i++;
+	if (str[i] == '\0')
+		return (1);
 	return (0);
 }
